@@ -2,7 +2,7 @@
 
 Test machine: ESP8266
 
-##Setup Instructions
+## Setup Instructions
 
 1. Upload `boot.py`, `main.py` and `urequests_mod.py` to the ESP8266
 2. Press the reset button to reload the scripts
