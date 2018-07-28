@@ -81,7 +81,9 @@ def request(method, url, data=None, json=None, headers={}, stream=None):
         l = s.readline()
         #print(l)
         l = l.split(None, 2)
-        status = int(l[1])
+        #status = int(l[1])
+        print(l)
+        status = 200
         reason = ""
         if len(l) > 2:
             reason = l[2].rstrip()
@@ -94,7 +96,8 @@ def request(method, url, data=None, json=None, headers={}, stream=None):
                 if b"chunked" in l:
                     raise ValueError("Unsupported " + l)
             elif l.startswith(b"Location:") and not 200 <= status <= 299:
-                raise NotImplementedError("Redirects not yet supported")
+                print('redirect')
+                #raise NotImplementedError("Redirects not yet supported")
     except OSError:
         s.close()
         raise
