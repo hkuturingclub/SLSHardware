@@ -73,10 +73,6 @@ def main():
     url, magic = getMagic()
     connectWithMagic(url, magic)
 
-    #Test webhook when connected to the internet
-    r = urequests.get("http://webhook.site/510a5c99-b9f8-4a23-aabb-30b293a6aa59")
-
-
     adc = ADC(0)
     t = time()
     while(True):
